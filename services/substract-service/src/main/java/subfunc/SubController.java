@@ -8,26 +8,27 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
-import subfunc.api.SubApi;
-import subfunc.models.*;
+import subfuncapi.api.SubtractApi;
+import subfuncapi.models.Subtract200Response;
+import subfuncapi.models.Operation;
 import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * SubController
  */
   @RestController
-public class SubController implements SubApi {
+public class SubController implements SubtractApi {
   
     @Override
-  public ResponseEntity<Sub200Response> sub(BigDecimal a, BigDecimal b) {
+  public ResponseEntity<Subtract200Response> subtract(BigDecimal a, BigDecimal b) {
     return subf(new Operation(a, b));
   }
 
     //@PostMapping("/sub")
-  private ResponseEntity<Sub200Response> subf(@RequestBody @Valid Operation op) { 
-    Sub200Response res = new Sub200Response();
-    res.result(Substract.sub(op.getA(), op.getB()));
-    ResponseEntity<Sub200Response> resp = new ResponseEntity<Sub200Response>(res, HttpStatusCode.valueOf(200));
+  private ResponseEntity<Subtract200Response> subf(@RequestBody @Valid Operation op) { 
+    Subtract200Response res = new Subtract200Response();
+    res.result(Subtract.sub(op.getA(), op.getB()));
+    ResponseEntity<Subtract200Response> resp = new ResponseEntity<Subtract200Response>(res, HttpStatusCode.valueOf(200));
     return resp;
   }
 }

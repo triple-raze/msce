@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * Substract function.
  */
-public class Substract {
+public class Subtract {
 
   public static int sub(int a, int b) {
     return a - b; 

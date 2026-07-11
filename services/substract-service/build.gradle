@@ -35,8 +35,8 @@ openApiGenerate {
   generatorName = 'spring'
   inputSpec = file("$rootDir/../../api/openapi.yaml").absolutePath
   outputDir = "$buildDir/generated"
-  modelPackage = "subfunc.models"
-  apiPackage = "subfunc.api"
+  modelPackage = "subfuncapi.models"
+  apiPackage = "subfuncapi.api"
   configOptions = [
     library: "spring-boot",
     useJakartaEe: "true",
