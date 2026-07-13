@@ -1,5 +1,0 @@
-name: a
-in: query
-required: true
-schema:
-  type: number

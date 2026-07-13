@@ -1,8 +1,0 @@
-description: Operation
-content:
-  application/json:
-    schema:
-      type: object
-      properties:
-        result:
-          type: number

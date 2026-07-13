@@ -7,7 +7,7 @@ CODEGEN_PATH=codegen/python/api
 mkdir -p $PACKAGE_PATH/api
 
 # Generating models
-redocly bundle api/openapi.yaml | \
+redocly bundle api/openapi.yaml -d | \
 datamodel-codegen \
 	--output $PACKAGE_PATH/api/__init__.py \
 	--input-file-type openapi \

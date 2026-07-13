@@ -8,54 +8,61 @@ paths:
     get:
       operationId: add
       parameters:
-        - $ref: "./a.yaml"
-        - $ref: "./b.yaml"
+        - $ref: "./parameters/a.yaml"
+        - $ref: "./parameters/b.yaml"
       responses:
         "200":
-          $ref: "./200.yaml"
+          $ref: "#/components/responses/Result"
         "400":
-          $ref: "./400.yaml"
+          $ref: "#/components/responses/APIError"
+
   /subtract:
     get:
       operationId: subtract
       parameters:
-        - $ref: "./a.yaml"
-        - $ref: "./b.yaml"
+        - $ref: "./parameters/a.yaml"
+        - $ref: "./parameters/b.yaml"
       responses:
         "200":
-          $ref: "./200.yaml"
+          $ref: "#/components/responses/Result"
         "400":
-          $ref: "./400.yaml"
+          $ref: "#/components/responses/APIError"
+
   /multiply:
     get:
       operationId: multiply
       parameters:
-        - $ref: "./a.yaml"
-        - $ref: "./b.yaml"
+        - $ref: "./parameters/a.yaml"
+        - $ref: "./parameters/b.yaml"
       responses:
         "200":
-          $ref: "./200.yaml"
+          $ref: "#/components/responses/Result"
         "400":
-          $ref: "./400.yaml"
+          $ref: "#/components/responses/APIError"
+
   /divide:
     get:
       operationId: divide
       parameters:
-        - $ref: "./a.yaml"
-        - $ref: "./b.yaml"
+        - $ref: "./parameters/a.yaml"
+        - $ref: "./parameters/b.yaml"
       responses:
         "200":
-          $ref: "./200.yaml"
+          $ref: "#/components/responses/Result"
         "400":
-          $ref: "./400.yaml"
+          $ref: "#/components/responses/APIError"
 
 components:
   schemas:
     Operation:
-      type: object
-      properties: 
-        a:
-          type: number
-        b:
-          type: number
-      required: [a, b]
+      $ref: "./schemas/operation.yaml"
+    Result:
+      $ref: "./schemas/result.yaml"
+    APIError:
+      $ref: "./schemas/api-error.yaml"
+
+  responses:
+    Result:
+      $ref: "./responses/result.yaml"
+    APIError:
+      $ref: "./responses/api-error.yaml"
