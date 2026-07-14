@@ -1,0 +1,5 @@
+description: Math operation result 
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/result.yaml"

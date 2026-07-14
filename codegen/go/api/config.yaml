@@ -1,0 +1,4 @@
+package: api
+output: only-models.gen.go
+generate:
+  models: true

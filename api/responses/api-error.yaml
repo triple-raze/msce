@@ -1,0 +1,5 @@
+description: 4xx or 5xx error with message
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/api-error.yaml"
